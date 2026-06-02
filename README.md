@@ -1,0 +1,92 @@
+# LunaGC-6.6.0 WIP
+
+## Note from the maintainer
+I updated because I want to test out Lohen. I might not update in the future. You can update it yourself using the protocol buffer defs in [GitLab](https://gitlab.com/kitkat-multiverse/genshin-protocol). I will not provide supports so if you have issues, you have to figure it yourself! Honestly, just follow the guides below.
+
+## Updated version of Grasscutters, with some new features implemented.
+Old Discord for LunaGC https://discord.gg/7D5gkyJR5Y (don't ask for support there as it's been taken over by other people (...), instead create an issue in this repository)
+
+Features and functionality of the ps is not guaranteed, try it yourself to see what works and what doesnt.
+This is possibly the only public PS with updated mob and gadget spawns! (Up to Version 5.4)
+
+Contribute if you want/can...
+
+# Read the [handbook](handbook.md)!
+
+# Setup Guide
+- Read it below, its just enough to get the server up and running along with the client.
+
+## Main Requirements
+
+- Get [Java 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html)
+- Get [MongoDB Community Server](https://www.mongodb.com/try/download/community)
+- Get [NodeJS](https://nodejs.org/dist/v20.15.0/node-v20.15.0-x64.msi) (For handbook generation)
+- Get game version REL6.6.0
+- Make sure to install java and set the environment variables.
+- Build the server (refer to "Compile the actual server" in this guide.)
+- Get the [Resources](https://github.com/capyb2222/LunaGC-Resources). Clone or download it, then place its contents into a `resources` folder in the LunaGC project root (so you have `LunaGC/resources/ExcelBinOutput`, `LunaGC/resources/BinOutput`, etc.).
+- Set useEncryption, Questing and useInRouting to false (it should be false by default, if not then change it)
+- [Patch the game](#patching-the-game)
+- Start the server and the game, make sure to also create an account in the LunaGC console!
+- Have fun (or don't)
+
+### Patching the game
+#### The patch won't redirect HoYoPass requests, so you may need an external proxy for now.
+- Install [**Rust**](https://rust-lang.org/learn/get-started/) and **Cargo** (comes with rustup)
+- Go to the `patch/` folder (make sure you have cloned this repository with the `--recurse-submodules` flag)
+- Run `cargo build --release` to build the DLL at `target/release`
+- Inject the DLL into the game. You can do this by renaming the patch to `Astrolabe.dll` and putting it in the game folder.
+
+### Getting started
+
+- Clone the repository (install [Git](https://git-scm.com) first )
+
+  ```
+  git clone --recurse-submodules https://github.com/capyb2222/LunaGC.git
+  ```
+
+- Now you can continue with the steps below.
+
+
+### Compile the actual Server
+
+**Requirements**:
+
+[Java Development Kit 21 | JDK](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html) or higher
+
+- **Sidenote**: Handbook generation may fail on some systems. To disable handbook generation, append `-PskipHandbook=1` to the `gradlew jar` command.
+
+- **For Windows**:
+
+  ```shell
+  .\gradlew.bat
+  .\gradlew.bat jar
+  ```
+
+- **For Linux**:
+
+  ```bash
+  chmod +x gradlew
+  ./gradlew
+  ./gradlew jar
+  ```
+
+### You can find the output JAR in the project root folder.
+
+### Manually compile the handbook
+
+```shell
+./gradlew generateHandbook
+```
+
+## Troubleshooting
+
+- Make sure to set useEncryption and useInRouting both to false otherwise you might encounter errors.
+- To use windy make sure that you put your luac files in C:\Windy (make the folder if it doesnt exist)
+- If you get an error related to MongoDB connection timeout, check if the mongodb service is running. On windows: Press windows key and r then type `services.msc`, look for mongodb server and if it's not started then start it by right clicking on it and start. On linux, you can do `systemctl status mongod` to see if it's running, if it isn't then type `systemctl start mongod`. However, if you get error 14 on linux change the owner of the mongodb folder and the .sock file (`sudo chown -R mongodb:mongodb /var/lib/mongodb` and `sudo chown mongodb:mongodb /tmp/mongodb-27017.sock` then try to start the service again.)
+
+## Credit
+
+proto Repository [hk4e-protos](https://gitlab.com/kitkat-multiverse/genshin-protocol)
+
+patch Repository [hk4e-patch-universal](https://github.com/kitkat033/hk4e-patch-universal)

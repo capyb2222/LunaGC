@@ -1,0 +1,105 @@
+# Compiled class file
+*.class
+
+#idea
+*.idea
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.war
+*.nar
+*.ear
+*.zip
+*.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build/
+out/
+
+# Ignore Gradle properties
+gradle.properties
+
+# Eclipse
+.project
+.classpath
+.settings
+.metadata
+.properties
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+.loadpath
+.recommenders
+
+# VSCode
+.vscode
+
+# Grasscutter
+/cache
+/resources
+/logs
+/plugins
+/keys
+/language
+/languages
+/proto
+
+/*.jar
+/*.sh
+!entrypoint.sh
+
+GM Handbook*.txt
+handbook.html
+
+config.json
+mitmdump.exe
+mongod.exe
+
+gacha-mapping.js
+mappings.js
+BuildConfig.java
+data/hk4e/announcement/
+
+# lombok
+/.apt_generated/
+
+# macOS
+.DS_Store
+.directory
+
+# Hotswap Agent
+hotswap-agent.properties
+
+# Debug patches
+patches/*.patch
+
+# Artifact Signatures
+*.asc
+
+# Local Claude Code settings / transcripts
+.claude/
+
+# Internal dev tooling & leaks (kept local, not published)
+/_*.ps1
+6.6.0_gacha_nt.txt
+*.working_bak
+/threaddump.txt
+/resources_obfuscated_bak/
+__pycache__/
