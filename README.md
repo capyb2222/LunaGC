@@ -1,7 +1,7 @@
 # LunaGC-6.6.0 WIP
 
 ## Note from the maintainer
-I updated because I want to test out Lohen (6.6 resources are not complete so some stuff might be broken). I also implemented gacha for lohen, Nicole, and prune (just pull on the nefer banner). Base on how I feel, I might update in the future. If I took too long, you can update it yourself using the protocol buffer defs in [GitLab](https://gitlab.com/kitkat-multiverse/genshin-protocol). I will not provide supports so if you have issues, you have to figure it yourself! Honestly, just follow the guides below.
+I updated because I want to test out Lohen (6.6 resources are not complete so some stuff might be broken). I also implemented gacha for lohen, Nicole, and Prune (nefer banner only. gacha works, but not perfect.). Based on how I feel, I might update in the future. If I took too long, you can update it yourself using the protocol buffer defs in [GitLab](https://gitlab.com/kitkat-multiverse/genshin-protocol). I will not provide supports so if you have issues, you have to figure it yourself! Honestly, just follow the guides below.
 
 ## Updated version of Grasscutters, with some new features implemented.
 Old Discord for LunaGC https://discord.gg/7D5gkyJR5Y (don't ask for support there as it's been taken over by other people (...), instead create an issue in this repository)
@@ -91,3 +91,5 @@ Contribute if you want/can...
 proto Repository [hk4e-protos](https://gitlab.com/kitkat-multiverse/genshin-protocol)
 
 patch Repository [hk4e-patch-universal](https://github.com/kitkat033/hk4e-patch-universal)
+
+6.5 base from kiktkat [LunaGC-6.5.0](https://github.com/kitkat033/LunaGC)
